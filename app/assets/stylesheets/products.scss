@@ -1,10 +1,10 @@
 main section.products-index,
 main section.categories-show {
   .products {
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -19,15 +19,25 @@ main section.categories-show {
       grid-template-columns: 1fr;
     }
     article {
-      .soldout {
+      div #soldout {
+        display: flex;
         min-width: 110px;
         background: rgba(224, 14, 14, 0.8);
         border: 1px solid rgba(224, 14, 14, 0.8);
         border-radius: 0.25em;
         color: white;
-        padding: 0.375rem 0.75rem;
+        padding-top: 5px;
+        padding-bottom: 0px;
+        margin-bottom: 12px;
         font-size: 1rem;
         border-radius: 0.25rem;
+        border-left: 11px;
+        justify-content: center;
+      }
+      .solout-icons{
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
       }
 
       a {
@@ -39,7 +49,8 @@ main section.categories-show {
       text-align: center;
       border-radius: 0.25em;
       border: 0.1em solid rgba(0, 130, 29, 0.3);
-      box-shadow: rgba(0, 130, 29, 0.16) 0px 3px 6px, rgba(0, 130, 29, 0.23) 0px 3px 6px;
+      box-shadow: rgba(0, 130, 29, 0.16) 0px 3px 6px,
+        rgba(0, 130, 29, 0.23) 0px 3px 6px;
       // transition: opacity 300ms linear;
 
       &:hover {
@@ -91,6 +102,15 @@ main section.categories-show {
           padding-right: 1em;
           background-color: rgba(0, 130, 29, 0.7);
           color: white;
+        }
+        &.disabled {
+          pointer-events: none;
+          opacity: 0.5;
+          padding-top: 0;
+          cursor: not-allowed;
+        }
+        #botton-disabled{
+          padding-top: 0px;
         }
       }
     }
