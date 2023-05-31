@@ -3,7 +3,9 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+   <% if enhanced_cart.empty? %>
+    <p><%= @message%> <a href="<%= @link %>">Go to the home page</a></p>
+  <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -25,7 +27,7 @@
             TOTAL:
           </th>
           <th>
-            $<%= cart_subtotal_cents / 100.0 %>
+            <%= cart_subtotal_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
@@ -48,5 +50,6 @@
       <% end %>
     </div>
   </div>
+   <% end %>
 
 </section>
