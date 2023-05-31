@@ -1,0 +1,53 @@
+.orders-show {
+  margin: 20px;
+}
+
+.page-header {
+  margin-bottom: 20px;
+}
+
+.order-summary {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.items {
+  margin-bottom: 40px;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: bold;
+  background-color: #f8f9fa;
+}
+
+.table tfoot th {
+  text-align: right;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  color: #fff;
+}
+
+.line-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
