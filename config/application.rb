@@ -10,6 +10,8 @@ module New
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.admin_username = ENV['ADMIN_USERNAME']
+    config.admin_password = ENV['ADMIN_PASSWORD']
 
     # Configuration for the application, engines, and railties goes here.
     #

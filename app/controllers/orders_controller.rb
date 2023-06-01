@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate, if: :admin_namespace?
 
   def show
     @order = Order.find(params[:id])

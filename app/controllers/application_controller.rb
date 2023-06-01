@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate, if: :admin_namespace?
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   
@@ -28,5 +30,18 @@ class ApplicationController < ActionController::Base
       expires: 10.days.from_now
     }
     cookies[:cart]
+  end
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == Rails.configuration.admin_username && password == Rails.configuration.admin_password
+    end
+  end
+
+  def skip_authentication?
+    exempt_controllers = ['admin/dashboard', 'admin/products'] # Add controllers that don't require authentication here
+    exempt_controllers.include?(controller_path) || controller_path == 'carts#show'
+  end
+  def admin_namespace?
+    controller_path.starts_with?('admin/')
   end
 end

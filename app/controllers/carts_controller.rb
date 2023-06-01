@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-
+  before_action :authenticate, if: :admin_namespace?
   def show
     if cart.empty?
       @message = "Your cart is empty."

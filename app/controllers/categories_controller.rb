@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate, if: :admin_namespace?
 
   def show
     @category = Category.find(params[:id])
