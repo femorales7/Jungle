@@ -39,6 +39,8 @@
               <%= link_to category.name, category, class: "nav-link" %>
             </li>
             <% end %>
+          
+
           <%# </ul>
         </li> %>
       </ul>
@@ -70,8 +72,25 @@
           My Cart (<%= cart.size %>) <% end %>
         </li>
       </ul>
+      <ul class="navbar-nav">
+        <li class="Login">
+          <% if current_user %>
+              <%= link_to 'Logout', logout_path, method: :delete %>
+          <% else %>
+
+          <li class="signUp">
+              <%= link_to 'Sign Up', signup_path %>
+          </li>
+          <li class="signUp">
+              <%= link_to 'Login', login_path %>
+          </li>
+          <% end %>   
+        </li>
+        
+      </ul>
     </div>
   </div>
+  
 </nav>
 <script>
 (function(){

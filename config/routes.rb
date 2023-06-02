@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
 
   get '/about', to: 'about#index', as: 'about'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
+
+
 
   resource :cart, only: [:show] do
     post   :add_item

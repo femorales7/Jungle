@@ -1,0 +1,58 @@
+
+<section class="admin-products-new">
+
+  <header class="page-header">
+    <h1>Sign Up</h1>
+  </header>
+
+ 
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+      <%= form_with(model: @user, url: users_path) do |form| %>
+
+        <% if form.object.errors.any? %>
+          <div class="alert alert-danger">
+            <strong>The following errors prevented saving:</strong>
+            <ul>
+              <% form.object.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= form.label :first_name %>
+          <%= form.text_field :first_name, class: 'form-control' %>         
+        </div>
+
+           <div class="form-group">
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, class: 'form-control' %>         
+        </div>
+
+        <div class="form-group">
+          <%= form.label :email %>
+          <%= form.email_field :email,  class: 'form-control'%>
+        </div>
+
+          <div class="form-group">
+          <%= form.label :password %>
+          <%= form.email_field :password,  class: 'form-control'%>
+        </div>
+
+          <div class="form-group">
+          <%= form.label :password_confirmation %>
+          <%= form.email_field :password_confirmation,  class: 'form-control'%>
+        </div>
+     
+
+        <%= form.submit 'Sign Up', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+
+</section>
+
+
+
