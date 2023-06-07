@@ -12,8 +12,9 @@
   </td>
   <td>
     <div>
+    
+    <div class="quantity"> <%= quantity %> </div>
     <%= button_to remove_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-danger' do %> - <% end %>
-    <%= quantity %>
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-success' do %> + <% end %>
     </div>
   </td>
